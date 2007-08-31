@@ -6,16 +6,16 @@ Summary:	Allow GTK to use Qt widget styles
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	http://gtk-qt.ecs.soton.ac.uk/files/%{version}/%{name}-%{version}.tar.bz2
 License:	GPL
 Group:		Graphical desktop/Other
-Url:		http://www.freedesktop.org/Software/gtk-qt/
+Url:		http://gtk-qt.ecs.soton.ac.uk/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk2-devel
 BuildRequires:	qt3-devel
 BuildRequires:	kdebase-devel
-BuildRequires:	cmake
+BuildRequires:	cmake >= 2.4
 BuildRequires:	bonoboui-devel
 BuildRequires:	desktop-file-utils
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
