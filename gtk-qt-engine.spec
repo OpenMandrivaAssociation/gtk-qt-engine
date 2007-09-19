@@ -7,6 +7,7 @@ Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Source0:	http://gtk-qt.ecs.soton.ac.uk/files/%{version}/%{name}-%{version}.tar.bz2
+Patch0:		gtk-qt-engine-fix-menuentry.patch	
 License:	GPL
 Group:		Graphical desktop/Other
 Url:		http://gtk-qt.ecs.soton.ac.uk/
@@ -17,7 +18,6 @@ BuildRequires:	qt3-devel
 BuildRequires:	kdebase-devel
 BuildRequires:	cmake >= 2.4
 BuildRequires:	bonoboui-devel
-BuildRequires:	desktop-file-utils
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -28,6 +28,7 @@ instead of doing the drawing itself.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p0
 
 %build
 cmake . \
@@ -42,11 +43,6 @@ make
 %install
 rm -rf %{buildroot}
 %makeinstall_std
-
-desktop-file-install --vendor='' \
-	--dir=%buildroot%_datadir/applications \
-	--add-category='DesktopSettings' \
-	%buildroot%_datadir/applications/*.desktop
 
 %find_lang gtkqtengine
 
