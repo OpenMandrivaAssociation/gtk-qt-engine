@@ -1,6 +1,6 @@
 %define name	gtk-qt-engine
 %define version	0.8
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 Summary:	Allow GTK to use Qt widget styles
 Name:		%{name}
