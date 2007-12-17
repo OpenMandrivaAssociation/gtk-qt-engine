@@ -18,7 +18,6 @@ BuildRequires:	qt3-devel
 BuildRequires:	kdebase-devel
 BuildRequires:	cmake >= 2.4
 BuildRequires:	bonoboui-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The GTK-Qt Theme Engine is a project allowing GTK to use Qt widget styles. 
