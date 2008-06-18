@@ -1,6 +1,6 @@
 %define name	gtk-qt-engine
 %define version	0.8
-%define release	%mkrel 4
+%define release	%mkrel 5
 
 Summary:	Allow GTK to use Qt widget styles
 Name:		%{name}
@@ -16,7 +16,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk2-devel
 BuildRequires:	qt3-devel
-BuildRequires:	kdebase-devel
+BuildRequires:	kdebase3-devel
 BuildRequires:	cmake >= 2.4
 BuildRequires:	bonoboui-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -37,7 +37,7 @@ cmake . \
     %if "lib" != "lib" 
         -DLIB_SUFFIX=64 \
     %endif 
-    -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+    -DCMAKE_INSTALL_PREFIX:PATH=/opt/kde3 \
     -DBUILD_SHARED_LIBS:BOOL=ON \
     -DBUILD_STATIC_LIBS:BOOL=OFF
 make
@@ -64,7 +64,7 @@ rm -rf %{buildroot}
 %files -f gtkqtengine.lang
 %defattr(-,root,root)
 %doc README
-%{_datadir}/applications/*.desktop
+%{_kde3_datadir}/applications/*.desktop
 %{_datadir}/themes/Qt/gtk-2.0/gtkrc
-%{_libdir}/kde3/*
+%{_kde3_libdir}/kde3/*
 %{_libdir}/gtk-2.0/*/engines/*
