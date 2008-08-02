@@ -37,6 +37,7 @@ Requires:       %{name} = %{version}-%{release}
 Conflicts:	gtk-qt-engine < 1.1-3
 
 %description -n %{libname}
+Dynamic libraries for %{name}.
 
 %prep
 %setup -q -n %{name}
