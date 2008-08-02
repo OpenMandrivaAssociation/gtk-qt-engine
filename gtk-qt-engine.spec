@@ -63,7 +63,7 @@ rm -rf %{buildroot}
 %doc AUTHORS ChangeLog
 %{_kde_iconsdir}/kcmgtk.png
 %{_kde_datadir}/kde4/services/kcmgtk4.desktop
-%{_kde_datadir}/themes/Qt4/gtk-2.0/gtkrc
+%{_datadir}/themes/Qt4/gtk-2.0/gtkrc
 %{_kde_libdir}/kde4/kcm_gtk4.so
 
 %files -n %libname
