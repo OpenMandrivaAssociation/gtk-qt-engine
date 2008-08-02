@@ -7,11 +7,9 @@ Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Source0:	http://gtk-qt.ecs.soton.ac.uk/files/%{version}/%{name}-%{version}.tar.bz2
-License:	GPL
+License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://gtk-qt.ecs.soton.ac.uk/
-BuildRequires:	autoconf
-BuildRequires:	automake
 BuildRequires:	gtk2-devel
 BuildRequires:	kdelibs4-devel
 BuildRequires:	cmake >= 2.4
