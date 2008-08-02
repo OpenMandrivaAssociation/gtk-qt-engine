@@ -1,12 +1,14 @@
 %define name	gtk-qt-engine
 %define version	1.1
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 Summary:	Allow GTK to use Qt widget styles
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Source0:	http://gtk-qt.ecs.soton.ac.uk/files/%{version}/%{name}-%{version}.tar.bz2
+Patch0:		gtk-qt-engine-1.1-fix-menuentry.patch
+Patch1:		gtk-qt-engine-1.1-fix-kde-nsplugin.patch
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://gtk-qt.ecs.soton.ac.uk/
@@ -24,6 +26,8 @@ instead of doing the drawing itself.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p0
+%patch1 -p1
 
 %build
 %setup_compile_flags
