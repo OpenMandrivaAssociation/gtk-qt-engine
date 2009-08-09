@@ -1,7 +1,7 @@
 %define name	gtk-qt-engine
 %define libname %mklibname gtk-qt-engine
 %define version	1.1
-%define release	%mkrel 3
+%define release	%mkrel 4
 
 Summary:	Allow GTK to use Qt widget styles
 Name:		%{name}
