@@ -4,7 +4,7 @@
 Summary:	Allow GTK to use Qt widget styles
 Name:		gtk-qt-engine
 Version:	1.1
-Release:	%mkrel 5.%{snapshot}.2
+Release:	%mkrel 5.%{snapshot}.3
 Source0:	http://gtk-qt.ecs.soton.ac.uk/files/%{version}/%{name}-%{version}-%{snapshot}.tar.xz
 # Debian patches
 Patch1:		01_fix_out_of_source_build.diff
@@ -20,7 +20,7 @@ BuildRequires:	kde4-macros
 BuildRequires:	cmake
 BuildRequires:	bonoboui-devel
 Requires:	%{libname} = %{version}
-Requires:	systemsettings-qt-gtk
+Requires:	gtk-qt-kcm
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -43,14 +43,15 @@ Conflicts:	gtk-qt-engine < 1.1-3
 %description -n %{libname}
 Dynamic libraries for %{name}.
 
-%package -n systemsettings-qt-gtk
+%package -n gtk-qt-kcm
 Summary:	KDE System Settings module to configure GTK+ 2 theme
 Group:		Graphical desktop/KDE
 Conflicts:	gtk-qt-engine < 1.1-5
+Obsoletes:	systemsettings-qt-gtk
 
-%description -n systemsettings-qt-gtk
-This package provides a way to configure GTK+ 2.x styles to be used
-in KDE 4 within Systemsettings - Appearance.
+%description -n gtk-qt-kcm
+This package provides configuration module to configure GTK+ 2.x styles from
+within Systemsettings -> "Application Appearance" in KDE4.
 
 %prep
 %setup -q -n %{name}
@@ -65,9 +66,14 @@ in KDE 4 within Systemsettings - Appearance.
 
 %install
 rm -rf %{buildroot}
-make -C build DESTDIR=%buildroot install
+%makeinstall_std -C build
 
-%find_lang gtkqtengine
+# fix .desktop file categories to make the kcm module show up under "Application
+#  Appearance" in systemsettings
+sed -i 's/X-KDE-System-Settings-Parent-Category=appearance/X-KDE-System-Settings-Parent-Category=application-appearance/' \
+%{buildroot}%{_kde_services}/kcmgtk4.desktop
+
+%find_lang kcmgtk4
 
 %clean
 rm -rf %{buildroot}
@@ -81,8 +87,8 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_libdir}/gtk-2.0/*/engines/libqt4engine.so
 
-%files -n systemsettings-qt-gtk -f gtkqtengine.lang
+%files -n gtk-qt-kcm -f kcmgtk4.lang
 %defattr(-,root,root)
 %{_kde_iconsdir}/kcmgtk.png
 %{_kde_libdir}/kde4/kcm_gtk4.so
-%{_kde_datadir}/kde4/services/kcmgtk4.desktop
+%{_kde_services}/kcmgtk4.desktop
