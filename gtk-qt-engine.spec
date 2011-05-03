@@ -4,7 +4,7 @@
 Summary:	Allow GTK to use Qt widget styles
 Name:		gtk-qt-engine
 Version:	1.1
-Release:	%mkrel 5.%{snapshot}.3
+Release:	%mkrel 5.%{snapshot}.4
 Source0:	http://gtk-qt.ecs.soton.ac.uk/files/%{version}/%{name}-%{version}-%{snapshot}.tar.xz
 # Debian patches
 Patch1:		01_fix_out_of_source_build.diff
