@@ -1,0 +1,12 @@
+diff -urN gtk-qt-engine/src/qt_theme_draw.c gtk-qt-engine-patched/src/qt_theme_draw.c
+--- gtk-qt-engine/src/qt_theme_draw.c	2009-11-13 22:46:26.000000000 +1000
++++ gtk-qt-engine-patched/src/qt_theme_draw.c	2012-09-03 20:55:52.714350428 +1100
+@@ -24,7 +24,7 @@
+ #include <gtk/gtkprogressbar.h>
+ #include <gdk/gdk.h>
+ #include <gtk/gtk.h>
+-#include <glib/glist.h>
++#include <glib.h>
+ 
+ #ifdef HAVE_BONOBO
+ #include <libbonobo.h>
