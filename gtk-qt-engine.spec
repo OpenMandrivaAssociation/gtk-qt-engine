@@ -20,7 +20,7 @@ BuildRequires:	kdelibs4-devel
 BuildRequires:	kde4-macros
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(libbonoboui-2.0)
-BuildRequires:	devel(libgcrypt)
+BuildRequires:	pkgconfig(libgcrypt)
 Requires:	%{libname} = %{version}-%{release}
 Requires:	gtk-qt-kcm
 
