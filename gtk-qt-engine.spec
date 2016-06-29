@@ -4,7 +4,7 @@
 Summary:	Allow GTK to use Qt widget styles
 Name:		gtk-qt-engine
 Version:	1.1
-Release:	5.%{snapshot}.8
+Release:	5.%{snapshot}.9
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://gtk-qt.ecs.soton.ac.uk/
@@ -16,7 +16,7 @@ Patch3:		03_disable_engine_with_nspluginviewer.diff
 Patch4:		04_no_kde4_in_configfile.diff
 Patch5:		gtk-qt-engine-1.1-glib.patch
 BuildRequires:	cmake
-BuildRequires:	kdelibs4-devel
+BuildRequires:	kdelibs-devel
 BuildRequires:	kde4-macros
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(libgcrypt)
