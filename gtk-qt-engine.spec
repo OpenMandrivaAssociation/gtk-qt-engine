@@ -54,7 +54,7 @@ within Systemsettings -> "Application Appearance" in KDE4.
 
 %prep
 %setup -qn %{name}
-%apply_patches
+%autopatch -p1
 
 %build
 %cmake_kde4
