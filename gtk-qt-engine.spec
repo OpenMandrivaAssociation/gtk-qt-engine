@@ -7,7 +7,7 @@ Version:	1.1
 Release:	5.%{snapshot}.9
 License:	GPLv2+
 Group:		Graphical desktop/KDE
-Url:		http://gtk-qt.ecs.soton.ac.uk/
+Url:		https://gtk-qt.ecs.soton.ac.uk/
 Source0:	http://gtk-qt.ecs.soton.ac.uk/files/%{version}/%{name}-%{version}-%{snapshot}.tar.xz
 # 4 Debian patches
 Patch1:		01_fix_out_of_source_build.diff
